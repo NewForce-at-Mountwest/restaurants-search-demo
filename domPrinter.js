@@ -23,3 +23,5 @@ const buildRestaurantCard = (singleRestaurant) => {
       document.querySelector("#restaurant-container").innerHTML += htmlString;
     });
   };
+
+  export default printAllRestaurants;

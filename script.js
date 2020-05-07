@@ -1,5 +1,9 @@
+import apiManagerObject from "./apiManager.js"
+import printAllRestaurants from "./domPrinter.js"
+import searchEvent from "./eventListeners.js"
+
 // Print all of the restaurants
-getAllRestaurantsFromAPI()
+apiManagerObject.getAllRestaurantsFromAPI()
   .then((parsedRestaurants) => {
     printAllRestaurants(parsedRestaurants);
   });
