@@ -1,17 +1,17 @@
 // Builds and returns HTML string for a restaurant card
 const buildRestaurantCard = (singleRestaurant) => {
     return `<div class="restaurant-card">
-        <a href="${singleRestaurant.restaurant.url}" target="_blank">
-            <h3>${singleRestaurant.restaurant.name}</h3>
+        <a href="${singleRestaurant.url}" target="_blank">
+            <h3>${singleRestaurant.name}</h3>
         </a>
-        <p>Address: ${singleRestaurant.restaurant.location.address}</p>
+        <p>Address: ${singleRestaurant.address}</p>
         <p>
-            Average User Rating: ${singleRestaurant.restaurant.user_rating.aggregate_rating}
+            Average User Rating: ${singleRestaurant.averageUserRating}
         </p>
         <p>
-            Average Cost For Two: $${singleRestaurant.restaurant.average_cost_for_two}
+            Average Cost For Two: $${singleRestaurant.averageCostPerTwo}
         </p>
-        <a href="${singleRestaurant.restaurant.menu_url}" target="_blank">
+        <a href="${singleRestaurant.menuURL}" target="_blank">
             <button>View Menu</button>
         </a>
       </div>`;
