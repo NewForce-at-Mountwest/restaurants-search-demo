@@ -8,6 +8,16 @@
         return fetch(
           `http://localhost:8088/restaurants?q=${whatTheUserSearched}`
         ).then((dirtyMoney) => dirtyMoney.json());
+      },
+      postRestaurant: (restaurantToPost) => {
+        return fetch("http://localhost:8088/restaurants", {
+          // Replace "url" with your API's URL
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(restaurantToPost),
+        })
       }
   }
 

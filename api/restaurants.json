@@ -53,6 +53,24 @@
       "averageCostPerTwo": "4",
       "address": "HAL GREEEEER",
       "id": 6
+    },
+    {
+      "url": "www.restaurant.com",
+      "menuURL": "www.restaurantmenu.com",
+      "name": "new restaurant",
+      "averageUserRating": "3",
+      "averageCostPerTwo": "33",
+      "address": "123",
+      "id": 7
+    },
+    {
+      "url": "www.restaurant.com",
+      "menuURL": "www.restaurantmenu.com",
+      "name": "new restaurant!!!!!!",
+      "averageUserRating": "3",
+      "averageCostPerTwo": "33",
+      "address": "123",
+      "id": 8
     }
   ]
 }
