@@ -61,14 +61,12 @@ document
         "Content-Type": "application/json",
       },
       body: JSON.stringify(restaurantObject),
-    }).then(function(){
-      document.querySelector("#restaurant-container").innerHTML = ""
-      apiManagerObject.getAllRestaurantsFromAPI()
-        .then((parsedRestaurants) => {
-          printAllRestaurants(parsedRestaurants);
-        });
-    })
-
+    }).then(function () {
+      document.querySelector("#restaurant-container").innerHTML = "";
+      apiManagerObject.getAllRestaurantsFromAPI().then((parsedRestaurants) => {
+        printAllRestaurants(parsedRestaurants);
+      });
+    });
 
     // .then(() => {
     //   // Print all of the restaurants
@@ -77,3 +75,22 @@ document
 
     console.log(restaurantObject);
   });
+
+// Add delete buttons to restaurant card
+// Add event listener to delete buttons
+document.querySelector("body").addEventListener("click", () => {
+  if (event.target.id.includes("delete-btn")) {
+    // On click, get the id of the thing they clicked on
+    console.log("You clicked the DELETE button!", event.target.id);
+    const primaryKey = event.target.id.split("-")[2];
+    // Use id to make a fetch call w/ a DELETE method to the database
+    fetch(`http://localhost:8088/restaurants/${primaryKey}`, {
+      method: "DELETE",
+    }).then(() => {
+      document.querySelector("#restaurant-container").innerHTML = "";
+      apiManagerObject.getAllRestaurantsFromAPI().then((parsedRestaurants) => {
+        printAllRestaurants(parsedRestaurants);
+      });
+    });
+  }
+});

@@ -11,9 +11,8 @@ const buildRestaurantCard = (singleRestaurant) => {
         <p>
             Average Cost For Two: $${singleRestaurant.averageCostPerTwo}
         </p>
-        <a href="${singleRestaurant.menuURL}" target="_blank">
-            <button>View Menu</button>
-        </a>
+        <button>View Menu</button>
+        <button id="delete-btn-${singleRestaurant.id}">Delete</button>
       </div>`;
   };
 

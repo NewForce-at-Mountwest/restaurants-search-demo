@@ -1,24 +1,6 @@
 {
   "restaurants": [
     {
-      "id": 1,
-      "url": "http://cookoutmilkshakereviews.com/",
-      "menuURL": "http://cookoutmilkshakereviews.com/",
-      "name": "Deg Thai",
-      "averageUserRating": "4.8",
-      "averageCostPerTwo": 20,
-      "address": "412 Shoemaker Blvd"
-    },
-    {
-      "id": 2,
-      "url": "http://cookoutmilkshakereviews.com/",
-      "menuURL": "http://cookoutmilkshakereviews.com/",
-      "name": "Smiling Elephant",
-      "averageUserRating": "4.6",
-      "averageCostPerTwo": 20,
-      "address": "1259 Sidco Drive"
-    },
-    {
       "url": "cookout.com",
       "menuURL": "cookout.com/delicious",
       "name": "Cookout",
@@ -26,15 +8,6 @@
       "averageCostPerTwo": "4",
       "address": "my street",
       "id": 3
-    },
-    {
-      "url": "bojangles.com",
-      "menuURL": "menu url",
-      "name": "bojangles",
-      "averageUserRating": "11",
-      "averageCostPerTwo": "4",
-      "address": "my street",
-      "id": 4
     },
     {
       "url": "tudors.com",
