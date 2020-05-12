@@ -12,20 +12,20 @@
     {
       "url": "tudors.com",
       "menuURL": "tudors.com/menu",
-      "name": "tudor's",
-      "averageUserRating": "100000",
-      "averageCostPerTwo": "2",
-      "address": "Hal Greer",
-      "id": 5
-    },
-    {
-      "url": "tudors.com",
-      "menuURL": "tudors.com/menu",
       "name": "Tudor's Biscuit World",
       "averageUserRating": "11",
       "averageCostPerTwo": "4",
       "address": "HAL GREEEEER",
       "id": 6
+    },
+    {
+      "url": "super cool",
+      "menuURL": "www.cool.com",
+      "name": "neo china",
+      "averageUserRating": "4",
+      "averageCostPerTwo": "20",
+      "address": "123",
+      "id": 7
     }
   ]
 }

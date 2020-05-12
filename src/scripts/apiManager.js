@@ -1,14 +1,29 @@
 // Return a fetch call that searches for a specific term
-  const apiManager = {
-    getAllRestaurantsFromAPI: () => {
-        return fetch("http://localhost:8088/restaurants")
-        .then((dirtyMoney) => dirtyMoney.json())
+const apiManager = {
+  getAllRestaurantsFromAPI: () => {
+    return fetch("http://localhost:8088/restaurants").then((dirtyMoney) =>
+      dirtyMoney.json()
+    );
+  },
+  searchRestaurantsFromAPI: (whatTheUserSearched) => {
+    return fetch(
+      `http://localhost:8088/restaurants?q=${whatTheUserSearched}`
+    ).then((dirtyMoney) => dirtyMoney.json());
+  },
+  postRestaurant: (restaurantToPost) => {
+    return fetch("http://localhost:8088/restaurants", {
+      // Replace "url" with your API's URL
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-      searchRestaurantsFromAPI: (whatTheUserSearched) => {
-        return fetch(
-          `http://localhost:8088/restaurants?q=${whatTheUserSearched}`
-        ).then((dirtyMoney) => dirtyMoney.json());
-      }
-  }
+      body: JSON.stringify(restaurantToPost),
+    });
+  },
+  deleteRestaurant: (id) =>
+    fetch(`http://localhost:8088/restaurants/${id}`, {
+      method: "DELETE",
+    }),
+};
 
-  export default apiManager;
+export default apiManager;

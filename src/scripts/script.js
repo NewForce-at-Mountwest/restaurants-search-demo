@@ -1,6 +1,6 @@
 import apiManagerObject from "./apiManager.js";
 import printAllRestaurants from "./domPrinter.js";
-import searchEvent from "./eventListeners.js";
+import eventListeners from "./eventListeners.js";
 
 // Print all of the restaurants
 apiManagerObject.getAllRestaurantsFromAPI().then((parsedRestaurants) => {
@@ -10,87 +10,28 @@ apiManagerObject.getAllRestaurantsFromAPI().then((parsedRestaurants) => {
 // Add a click event listener to the search button
 document
   .querySelector("#restaurant-search-btn")
-  .addEventListener("click", searchEvent);
+  .addEventListener("click", eventListeners.searchEvent);
 
 // Add a keypress event to the search input to check for an enter key
 document
   .querySelector("#restaurant-search-input")
   .addEventListener("keypress", function (e) {
     if (e.keyCode === 13) {
-      searchEvent();
+      eventListeners.searchEvent();
     }
   });
 
 //  Add event listener on submit button for restaurant form
 document
   .querySelector("#add-restaurant")
-  .addEventListener("click", function () {
-    // When the button is clicked, log all the values that user typed in to the console
-    const restaurantName = document.querySelector("#restaurant-name").value;
-    const restaurantMenuURL = document.querySelector("#restaurant-menu-url")
-      .value;
-    const restaurantURL = document.querySelector("#restaurant-url").value;
-    const restaurantRating = document.querySelector("#restaurant-rating").value;
-    const restaurantCostPerTwo = document.querySelector("#restaurant-cost")
-      .value;
-    const restaurantAddress = document.querySelector("#restaurant-address")
-      .value;
+  .addEventListener("click", eventListeners.saveRestaurantEvent);
 
-    console.log(
-      restaurantName,
-      restaurantMenuURL,
-      restaurantURL,
-      restaurantRating,
-      restaurantCostPerTwo,
-      restaurantAddress
-    );
-
-    const restaurantObject = {
-      url: restaurantURL,
-      menuURL: restaurantMenuURL,
-      name: restaurantName,
-      averageUserRating: restaurantRating,
-      averageCostPerTwo: restaurantCostPerTwo,
-      address: restaurantAddress,
-    };
-
-    fetch("http://localhost:8088/restaurants", {
-      // Replace "url" with your API's URL
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(restaurantObject),
-    }).then(function () {
-      document.querySelector("#restaurant-container").innerHTML = "";
-      apiManagerObject.getAllRestaurantsFromAPI().then((parsedRestaurants) => {
-        printAllRestaurants(parsedRestaurants);
-      });
-    });
-
-    // .then(() => {
-    //   // Print all of the restaurants
-    //
-    // });
-
-    console.log(restaurantObject);
-  });
 
 // Add delete buttons to restaurant card
 // Add event listener to delete buttons
 document.querySelector("body").addEventListener("click", () => {
   if (event.target.id.includes("delete-btn")) {
-    // On click, get the id of the thing they clicked on
-    console.log("You clicked the DELETE button!", event.target.id);
-    const primaryKey = event.target.id.split("-")[2];
-    // Use id to make a fetch call w/ a DELETE method to the database
-    fetch(`http://localhost:8088/restaurants/${primaryKey}`, {
-      method: "DELETE",
-    }).then(() => {
-      document.querySelector("#restaurant-container").innerHTML = "";
-      apiManagerObject.getAllRestaurantsFromAPI().then((parsedRestaurants) => {
-        printAllRestaurants(parsedRestaurants);
-      });
-    });
+    eventListeners.deleteRestaurantEvent(event);
   }
 });
+

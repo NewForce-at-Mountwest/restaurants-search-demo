@@ -17,6 +17,8 @@ const buildRestaurantCard = (singleRestaurant) => {
   };
 
   const printAllRestaurants = (restaurantArray) => {
+      // Clear the container
+    document.querySelector("#restaurant-container").innerHTML = "";
     restaurantArray.forEach((restaurantObjectInLoop) => {
       const htmlString = buildRestaurantCard(restaurantObjectInLoop);
       document.querySelector("#restaurant-container").innerHTML += htmlString;
