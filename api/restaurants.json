@@ -4,28 +4,10 @@
       "url": "cookout.com",
       "menuURL": "cookout.com/delicious",
       "name": "Cookout",
-      "averageUserRating": "11",
+      "averageUserRating": "100000",
       "averageCostPerTwo": "4",
       "address": "my street",
-      "id": 3
-    },
-    {
-      "url": "tudors.com",
-      "menuURL": "tudors.com/menu",
-      "name": "tudor's",
-      "averageUserRating": "100000",
-      "averageCostPerTwo": "2",
-      "address": "Hal Greer",
-      "id": 5
-    },
-    {
-      "url": "tudors.com",
-      "menuURL": "tudors.com/menu",
-      "name": "Tudor's Biscuit World",
-      "averageUserRating": "11",
-      "averageCostPerTwo": "4",
-      "address": "HAL GREEEEER",
-      "id": 6
+      "id": 1
     }
   ]
 }
