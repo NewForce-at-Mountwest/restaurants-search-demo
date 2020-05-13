@@ -51,7 +51,7 @@ const eventListeners = {
     console.log("This is event.target.id", event.target.id);
     console.log(event.target.id.split("-")[2]);
     const primaryKey = event.target.id.split("-")[2];
-    
+
     // Use id to make a fetch call w/ a DELETE method to the database
    apiManager.deleteRestaurant(primaryKey)
    .then(apiManager.getAllRestaurantsFromAPI)
@@ -60,6 +60,60 @@ const eventListeners = {
    })
 
   },
+  printEditForm: () => {
+    console.log("You clicked on an edit button!")
+    console.log(event.target.id)
+    const primaryKey = event.target.id.split("-")[2];
+    console.log(primaryKey)
+    // Select the card that the edit button belongs to (the parent card)
+    const cardToReplace = document.querySelector(`#restaurant-${primaryKey}`)
+    console.log(cardToReplace)
+
+    // Replace its innerHTML with a form
+    // Auto-fill fields on form with this restaurant's current information
+    apiManager.getOneRestaurant(primaryKey)
+    .then(singleRestaurantObject => {
+      console.log(singleRestaurantObject)
+       // TODO: put in domPrinter.js
+    cardToReplace.innerHTML = `<section>
+    <form>
+      <input type="text" placeholder="Restaurant Name" value="${singleRestaurantObject.name}" id="edit-restaurant-name" />
+      <input
+        type="text"
+        placeholder="Restaurant Website"
+        id="edit-restaurant-url"
+        value="${singleRestaurantObject.url}"
+
+      />
+      <input
+        type="text"
+        placeholder="Restaurant Menu URL"
+        id="edit-restaurant-menu-url"
+        value="${singleRestaurantObject.menuURL}"
+      />
+      <input
+        type="text"
+        placeholder="Average User Rating"
+        id="edit-restaurant-rating"
+        value="${singleRestaurantObject.averageUserRating}"
+      />
+      <input
+        type="text"
+        placeholder="Average Cost Per Two"
+        id="edit-restaurant-cost"
+        value="${singleRestaurantObject.averageCostPerTwo}"
+      />
+      <input
+        type="text"
+        placeholder="Street Address"
+        id="edit-restaurant-address"
+        value="${singleRestaurantObject.address}"
+      />
+    </form>
+    <button id="save-changes-restaurant">Save Changes</button>
+  </section>`
+    })
+  }
 };
 
 export default eventListeners;

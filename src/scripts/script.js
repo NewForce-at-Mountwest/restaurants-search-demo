@@ -31,5 +31,7 @@ document
 document.querySelector("body").addEventListener("click", () => {
   if (event.target.id.includes("delete-btn")) {
     eventListenerObject.deleteRestaurantEvent()
+  } else if (event.target.id.includes("edit-btn")){
+    eventListenerObject.printEditForm()
   }
 });

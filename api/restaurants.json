@@ -8,6 +8,24 @@
       "averageCostPerTwo": "4",
       "address": "my street",
       "id": 1
+    },
+    {
+      "url": "cookout.com",
+      "menuURL": "cookout.com/delicious",
+      "name": "tudor's",
+      "averageUserRating": "11",
+      "averageCostPerTwo": "4",
+      "address": "my street",
+      "id": 2
+    },
+    {
+      "url": "www.backyardpizza.com",
+      "menuURL": "!!!",
+      "name": "Backyard Pizza",
+      "averageUserRating": "5",
+      "averageCostPerTwo": "30",
+      "address": "downtown",
+      "id": 3
     }
   ]
 }

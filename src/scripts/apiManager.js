@@ -24,6 +24,9 @@ const apiManager = {
     return fetch(`http://localhost:8088/restaurants/${id}`, {
       method: "DELETE",
     })
+  },
+  getOneRestaurant: (id) => {
+    return fetch(`http://localhost:8088/restaurants/${id}`).then(r => r.json())
   }
 };
 

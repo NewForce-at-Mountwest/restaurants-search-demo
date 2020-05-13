@@ -1,6 +1,6 @@
 // Builds and returns HTML string for a restaurant card
 const buildRestaurantCard = (singleRestaurant) => {
-    return `<div class="restaurant-card">
+    return `<div class="restaurant-card" id="restaurant-${singleRestaurant.id}">
         <a href="${singleRestaurant.url}" target="_blank">
             <h3>${singleRestaurant.name}</h3>
         </a>
@@ -13,6 +13,7 @@ const buildRestaurantCard = (singleRestaurant) => {
         </p>
         <button>View Menu</button>
         <button id="delete-btn-${singleRestaurant.id}">Delete</button>
+        <button id="edit-btn-${singleRestaurant.id}">Edit</button>
       </div>`;
   };
 
