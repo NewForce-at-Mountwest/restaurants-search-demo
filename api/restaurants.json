@@ -12,19 +12,19 @@
     {
       "url": "cookout.com",
       "menuURL": "cookout.com/delicious",
-      "name": "tudor's",
+      "name": "Tudor's Biscuit World",
       "averageUserRating": "11",
       "averageCostPerTwo": "4",
       "address": "my street",
       "id": 2
     },
     {
-      "url": "www.backyardpizza.com",
-      "menuURL": "!!!",
-      "name": "Backyard Pizza",
-      "averageUserRating": "5",
-      "averageCostPerTwo": "30",
-      "address": "downtown",
+      "url": "www.pizzahut.com",
+      "menuURL": "pizza.com!!!",
+      "name": "Pizza Hut",
+      "averageUserRating": "2",
+      "averageCostPerTwo": "10",
+      "address": "Downtown Huntington",
       "id": 3
     }
   ]

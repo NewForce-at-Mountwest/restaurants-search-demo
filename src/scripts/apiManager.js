@@ -27,6 +27,15 @@ const apiManager = {
   },
   getOneRestaurant: (id) => {
     return fetch(`http://localhost:8088/restaurants/${id}`).then(r => r.json())
+  },
+  updateRestaurant: (restaurantObject) => {
+    return fetch(`http://localhost:8088/restaurants/${restaurantObject.id}`,{
+      method: "PUT",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(restaurantObject)
+  })
   }
 };
 

@@ -73,7 +73,7 @@ const eventListeners = {
     // Auto-fill fields on form with this restaurant's current information
     apiManager.getOneRestaurant(primaryKey)
     .then(singleRestaurantObject => {
-      console.log(singleRestaurantObject)
+      console.log("THIS IS THE RESTAURANT FROM THE API", singleRestaurantObject)
        // TODO: put in domPrinter.js
     cardToReplace.innerHTML = `<section>
     <form>
@@ -110,9 +110,42 @@ const eventListeners = {
         value="${singleRestaurantObject.address}"
       />
     </form>
-    <button id="save-changes-restaurant">Save Changes</button>
+    <button id="save-changes-${singleRestaurantObject.id}">Save Changes</button>
   </section>`
     })
+  },
+  saveRestaurantChangesEvent: () => {
+    // Get values of inputs
+    console.log("you clicked the save changes button", event.target.id)
+    const restaurantNameValue = document.querySelector("#edit-restaurant-name").value;
+    const restaurantURLValue = document.querySelector("#edit-restaurant-url").value;
+    const restaurantMenuURLValue = document.querySelector("#edit-restaurant-menu-url").value;
+    const restaurantRatingValue = document.querySelector("#edit-restaurant-rating").value;
+    const restaurantCostValue = document.querySelector("#edit-restaurant-cost").value;
+    const restaurantAddressValue = document.querySelector("#edit-restaurant-address").value;
+
+
+
+    // Store those values in an object
+    const restaurantObjectToEdit = {
+      url: restaurantURLValue,
+      menuURL: restaurantMenuURLValue,
+      name: restaurantNameValue,
+      averageUserRating: restaurantRatingValue,
+      averageCostPerTwo: restaurantCostValue,
+      address: restaurantAddressValue,
+      id: event.target.id.split("-")[2]
+    }
+
+    console.log("this is what we're going to send to the db", restaurantObjectToEdit)
+    // Make a PUT request to the database
+    // Refresh the DOM
+    apiManager.updateRestaurant(restaurantObjectToEdit)
+    .then(apiManager.getAllRestaurantsFromAPI)
+    .then(parsedRestaurants => {
+      printAllRestaurants(parsedRestaurants)
+    })
+
   }
 };
 

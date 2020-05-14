@@ -33,5 +33,7 @@ document.querySelector("body").addEventListener("click", () => {
     eventListenerObject.deleteRestaurantEvent()
   } else if (event.target.id.includes("edit-btn")){
     eventListenerObject.printEditForm()
+  } else if(event.target.id.includes("save-changes")){
+    eventListenerObject.saveRestaurantChangesEvent()
   }
 });
