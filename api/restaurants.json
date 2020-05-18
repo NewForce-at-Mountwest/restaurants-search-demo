@@ -1,14 +1,4 @@
 {
-  "categories": [
-    {
-      "id": 1,
-      "name": "Rapid Dining"
-    },
-    {
-      "id": 2,
-      "name": "Thai Food"
-    }
-  ],
   "users": [
     {
       "id": 1,
@@ -23,20 +13,6 @@
       "password": "345"
     }
   ],
-  "reviews": [
-    {
-      "id": 1,
-      "userId": 1,
-      "restaurantId": 1,
-      "reviewText": "The milkshakes are great"
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "restaurantId": 1,
-      "reviewText": "It's amazing. Best milkshakes ever. Well not ever, but they're pretty good."
-    }
-  ],
   "restaurants": [
     {
       "url": "cookout.com",
@@ -46,17 +22,7 @@
       "averageCostPerTwo": "4",
       "address": "my street",
       "id": 1,
-      "categoryId": 1
-    },
-    {
-      "url": "cookout.com",
-      "menuURL": "cookout.com/delicious",
-      "name": "Tudor's Biscuit World",
-      "averageUserRating": "11",
-      "averageCostPerTwo": "4",
-      "address": "my street",
-      "id": 2,
-      "categoryId": 1
+      "userId": 1
     },
     {
       "url": "www.pizzahut.com",
@@ -66,7 +32,7 @@
       "averageCostPerTwo": "10",
       "address": "Downtown Huntington",
       "id": 3,
-      "categoryId": 1
+      "userId": 2
     },
     {
       "url": "www.degthai.com",
@@ -76,7 +42,7 @@
       "averageCostPerTwo": "10",
       "address": "Downtown Huntington",
       "id": 4,
-      "categoryId": 2
+      "userId": 1
     },
     {
       "url": "www.smilingelephant.com",
@@ -86,28 +52,26 @@
       "averageCostPerTwo": "10",
       "address": "Downtown Huntington",
       "id": 5,
-      "categoryId": 2
-    }
-  ],
-  "foodItems": [
-    {
-      "id": 1,
-      "name": "Sushi",
-      "price": "9.99",
-      "restaurantId": 5
+      "userId": 2
     },
     {
-      "id": 2,
-      "name": "Sushi",
-      "price": "9.99",
-      "restaurantId": 4
+      "url": "dq.com",
+      "menuURL": "dq.com/menu",
+      "name": "Dairy Queen",
+      "averageUserRating": "5",
+      "averageCostPerTwo": "10",
+      "address": "5th ",
+      "id": 6
     },
     {
-      "id": 3,
-      "name": "Pad Thai",
-      "price": "12.99",
-      "restaurantId": 5
+      "url": "subway.com",
+      "menuURL": "subway.com/menu",
+      "name": "subway",
+      "averageUserRating": "5",
+      "averageCostPerTwo": "15",
+      "address": "123",
+      "userId": "1",
+      "id": 7
     }
-
   ]
 }
